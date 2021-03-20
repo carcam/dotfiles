@@ -16,6 +16,10 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+" Plugin 'preservim/nerdtree'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'philrunninger/nerdtree-visual-selection'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'Tagbar'
@@ -27,6 +31,13 @@ Plugin 'neoclide/coc-tabnine'
 Plugin 'tpope/vim-eunuch'
 "Plugin 'zxqfl/tabnine-vim'
 "Plugin 'project.vim'
+
+set encoding=utf8
+" Nerdfont for devicons in MAC
+set guifont=DroidSansMono\ Nerd\ Font:h11
+
+" Nerdfont for devicons in Linux
+"set guifont=DroidSansMono\ Nerd\ Font\ 11
 
 " Always show Status Bar
 set laststatus=2
