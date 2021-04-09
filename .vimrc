@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 colorscheme koehler
+set hidden
 " set gfn=monaco:h15
 
 " set the runtime path to include Vundle and initialize
@@ -20,6 +21,7 @@ Plugin 'scrooloose/nerdtree'
 " Plugin 'preservim/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'philrunninger/nerdtree-visual-selection'
+Plugin 'alvan/vim-closetag'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'Tagbar'
@@ -34,7 +36,7 @@ Plugin 'tpope/vim-eunuch'
 
 set encoding=utf8
 " Nerdfont for devicons in MAC
-set guifont=DroidSansMono\ Nerd\ Font:h11
+set guifont=DroidSansMono_Nerd_Font:h11
 
 " Nerdfont for devicons in Linux
 "set guifont=DroidSansMono\ Nerd\ Font\ 11
@@ -93,6 +95,8 @@ let g:syntastic_php_phpmd_post_args = 'cleancode,codesize,controversial,design,u
 "let g:syntastic_php_phpcs_args='--standard=Joomla -n'
 "let g:syntastic_quiet_messages = { "regex": ['EXTENSION_NAME', 'text_prefix', 'author tag must be in the form', 'copyright tag must contain a year and the name', 'license tag must contain a url']}
 
+" AutoClose Tab configuration
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.tpl'
 
 " Tab rainbow
 let g:rainbow_active = 1
