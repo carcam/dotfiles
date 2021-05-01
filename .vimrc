@@ -91,7 +91,8 @@ let g:syntastic_check_on_open = 0
 
 let g:netrw_keepdir=0
 let g:syntastic_php_checkers=['php', 'phpcs', 'phpmd']
-let g:syntastic_php_phpmd_post_args = 'cleancode,codesize,controversial,design,unusedcode'
+"let g:syntastic_php_phpmd_post_args = 'cleancode,codesize,controversial,design,unusedcode'
+let g:syntastic_php_phpmd_post_args = 'phpmd'
 "let g:syntastic_php_phpcs_args='--standard=Joomla -n'
 "let g:syntastic_quiet_messages = { "regex": ['EXTENSION_NAME', 'text_prefix', 'author tag must be in the form', 'copyright tag must contain a year and the name', 'license tag must contain a url']}
 
@@ -114,6 +115,7 @@ let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 nmap <F8> :TagbarToggle<CR>
+nmap <F1> :NERDTreeToggle<CR>
 
 " Keep all folds open when a file is opened
 augroup OpenAllFoldsOnFileOpen
