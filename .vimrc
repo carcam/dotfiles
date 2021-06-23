@@ -31,6 +31,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'luochen1990/rainbow'
 Plugin 'neoclide/coc-tabnine'
 Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-commentary'
 "Plugin 'zxqfl/tabnine-vim'
 "Plugin 'project.vim'
 
