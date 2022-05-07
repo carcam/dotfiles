@@ -1,6 +1,5 @@
-set nocompatible              " be iMproved, required
+"Set nocompatible              " be iMproved, required
 filetype off                  " required
-colorscheme koehler
 set hidden
 " set gfn=monaco:h15
 
@@ -21,7 +20,8 @@ Plugin 'scrooloose/nerdtree'
 " Plugin 'preservim/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'philrunninger/nerdtree-visual-selection'
-Plugin 'alvan/vim-closetag'
+Plugin 'will133/vim-dirdiff'
+Plugin 'mattn/emmet-vim'
 " Git plugin not hosted on GitHub
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'Tagbar'
@@ -32,6 +32,13 @@ Plugin 'luochen1990/rainbow'
 Plugin 'neoclide/coc-tabnine'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-abolish'
+Plugin 'alvan/vim-closetag'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'rodnaph/vim-color-schemes'
+Plugin 'NLKNguyen/papercolor-theme'
+"Plugin 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 "Plugin 'zxqfl/tabnine-vim'
 "Plugin 'project.vim'
 
@@ -74,6 +81,12 @@ syntax on
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+let g:solarized_termcolors=256
+colorscheme koehler
+
+
+
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -99,8 +112,14 @@ let g:syntastic_php_phpmd_post_args = 'phpmd'
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute " ,"trimming empty <", "unescaped &" , "lacks \"action", "is not recognized!", "discarding unexpected", "@submit.prevent"]
 let g:synstastic_html_tidy_quiet_messages = { "level" : "warnings" }
 
+"let g:syntastic_php_checker_exec = "./vendor/bin/phpcs"
+
 " AutoClose Tab configuration
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.tpl'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.tpl, *.vue'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+let g:closetag_filetypes = 'html,xhtml,phtml,tpl,vue'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+
 
 " Tab rainbow
 let g:rainbow_active = 1
@@ -109,13 +128,23 @@ let g:rainbow_load_separately = [
     \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
     \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
     \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
-    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+    \ [ '*.{html,htm, tpl}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
     \ ]
 
 let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+let g:user_emmet_settings = {
+\	'smarty' : {
+\		'extends' : 'html',
+\	},
+\	'php' : {
+\		'extends' : 'html',
+\		'filters' : 'c',
+\	},
+\}
 
 nmap <F8> :TagbarToggle<CR>
 nmap <F1> :NERDTreeToggle<CR>
@@ -124,6 +153,8 @@ nmap <F1> :NERDTreeToggle<CR>
 if isdirectory(expand(".git"))
   let g:NERDTreeBookmarksFile = '.git/.nerdtree-bookmarks'
 endif
+
+au BufRead,BufNewFile *.tpl set filetype=smarty
 
 " Keep all folds open when a file is opened
 augroup OpenAllFoldsOnFileOpen
