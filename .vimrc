@@ -38,7 +38,8 @@ Plugin 'alvan/vim-closetag'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'rodnaph/vim-color-schemes'
 Plugin 'NLKNguyen/papercolor-theme'
-"Plugin 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+Plugin 'vim-scripts/AutoComplPop'
+Plugin 'neoclide/coc.nvim'
 "Plugin 'zxqfl/tabnine-vim'
 "Plugin 'project.vim'
 
