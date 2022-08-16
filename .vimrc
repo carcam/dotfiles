@@ -1,7 +1,15 @@
 "Set nocompatible              " be iMproved, required
 filetype off                  " required
 set hidden
-" set gfn=monaco:h15
+
+set shell=bash\ -i
+set pastetoggle=<F2>
+
+"Makes pattern matching case-insensitive
+set ignorecase
+
+" Overrides ignorecase if your pattern contains mixed case
+set smartcase
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -40,6 +48,9 @@ Plugin 'rodnaph/vim-color-schemes'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'vim-scripts/AutoComplPop'
 Plugin 'neoclide/coc.nvim'
+Plugin 'dpelle/vim-LanguageTool'
+Plugin 'dracula/vim', {'name': 'dracula'}
+Plugin 'instant-markdown/vim-instant-markdown'
 "Plugin 'zxqfl/tabnine-vim'
 "Plugin 'project.vim'
 
@@ -84,7 +95,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 let g:solarized_termcolors=256
-colorscheme koehler
+colorscheme Black
 
 
 
@@ -115,6 +126,9 @@ let g:synstastic_html_tidy_quiet_messages = { "level" : "warnings" }
 
 "let g:syntastic_php_checker_exec = "./vendor/bin/phpcs"
 
+" Set intelliphense to nice to see colors
+hi Pmenu ctermbg=black ctermfg=white
+
 " AutoClose Tab configuration
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.tpl, *.vue'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
@@ -137,6 +151,8 @@ let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
+"let g:markdown_fenced_languages = ['html', 'css', 'php', 'js']
+
 let g:user_emmet_settings = {
 \	'smarty' : {
 \		'extends' : 'html',
@@ -147,6 +163,7 @@ let g:user_emmet_settings = {
 \	},
 \}
 
+
 nmap <F8> :TagbarToggle<CR>
 nmap <F1> :NERDTreeToggle<CR>
 
@@ -155,7 +172,10 @@ if isdirectory(expand(".git"))
   let g:NERDTreeBookmarksFile = '.git/.nerdtree-bookmarks'
 endif
 
-au BufRead,BufNewFile *.tpl set filetype=smarty
+au BufRead, BufNewFile *.tpl set filetype=smarty
+
+" Autocomplete html
+autocmd FileType html,tpl set omnifunc=htmlcomplete#CompleteTags
 
 " Keep all folds open when a file is opened
 augroup OpenAllFoldsOnFileOpen
