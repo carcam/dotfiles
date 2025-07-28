@@ -11,48 +11,42 @@ set ignorecase
 " Overrides ignorecase if your pattern contains mixed case
 set smartcase
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Initialize vim-plug and specify plugin directory
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" Make sure you use single quotes
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-" Plugin 'preservim/nerdtree'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'philrunninger/nerdtree-visual-selection'
-Plugin 'will133/vim-dirdiff'
-Plugin 'mattn/emmet-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+" Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'philrunninger/nerdtree-visual-selection'
+Plug 'will133/vim-dirdiff'
+Plug 'mattn/emmet-vim'
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'Tagbar'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'Yggdroot/indentLine'
-Plugin 'luochen1990/rainbow'
-Plugin 'neoclide/coc-tabnine'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-abolish'
-Plugin 'alvan/vim-closetag'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'rodnaph/vim-color-schemes'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'vim-scripts/AutoComplPop'
-Plugin 'neoclide/coc.nvim'
-Plugin 'dpelle/vim-LanguageTool'
-Plugin 'dracula/vim', {'name': 'dracula'}
-Plugin 'instant-markdown/vim-instant-markdown'
-"Plugin 'zxqfl/tabnine-vim'
-"Plugin 'project.vim'
+Plug 'git://git.wincent.com/command-t.git'
+Plug 'preservim/tagbar'
+Plug 'vim-syntastic/syntastic'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'Yggdroot/indentLine'
+Plug 'luochen1990/rainbow'
+Plug 'neoclide/coc-tabnine'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
+Plug 'alvan/vim-closetag'
+Plug 'altercation/vim-colors-solarized'
+Plug 'rodnaph/vim-color-schemes'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'vim-scripts/AutoComplPop'
+Plug 'neoclide/coc.nvim'
+Plug 'dpelle/vim-LanguageTool'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'instant-markdown/vim-instant-markdown'
+"Plug 'zxqfl/tabnine-vim'
+"Plug 'project.vim'
 
 set encoding=utf8
 " Nerdfont for devicons in MAC
@@ -91,7 +85,7 @@ set foldmethod=indent
 " Syntax highlight
 syntax on
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
 
 let g:solarized_termcolors=256
