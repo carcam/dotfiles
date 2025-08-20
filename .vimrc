@@ -2,7 +2,7 @@
 filetype off                  " required
 set hidden
 
-set shell=bash\ -i
+"set shell=bash\ -i
 set pastetoggle=<F2>
 
 "Makes pattern matching case-insensitive
@@ -31,7 +31,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'luochen1990/rainbow'
-Plug 'neoclide/coc-tabnine'
+"Plug 'neoclide/coc-tabnine'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -45,6 +45,7 @@ Plug 'neoclide/coc.nvim'
 Plug 'dpelle/vim-LanguageTool'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'instant-markdown/vim-instant-markdown'
+Plug 'Exafunction/windsurf.vim', { 'branch': 'main' }
 "Plug 'zxqfl/tabnine-vim'
 "Plug 'project.vim'
 
