@@ -53,6 +53,20 @@ set encoding=utf8
 " Nerdfont for devicons in MAC
 set guifont=DroidSansMono_Nerd_Font:h11
 
+if has("gui_running")
+    if has("gui_gtk2")
+         set guifont=Monospace\ 10
+       elseif has("gui_photon")
+         set guifont=Monospace\ 10
+       elseif has("gui_kde")
+         set guifont=Monospace\ /10/-1/5/50/0/0/0/1/0
+       elseif has("x11")
+         set guifont=Monospace\ 10
+       else
+         set guifont=Monospace\ 10
+     endif
+  endif
+
 " Nerdfont for devicons in Linux
 "set guifont=DroidSansMono\ Nerd\ Font\ 11
 
